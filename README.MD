@@ -138,7 +138,9 @@ The system includes comprehensive error handling at each step:
     └── README.md
 
 `agents/`: Contains all agent modules.
+
 `config/`: Contains the configuration file for API keys and credentials.
+
 *main.py*: Entry point that sets up and runs the LangGraph workflow.
 *requirements.txt*: List of required Python packages.
 *README.md*: Project documentation.
