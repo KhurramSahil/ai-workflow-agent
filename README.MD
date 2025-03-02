@@ -105,7 +105,7 @@ Create a config/config.json file with the following structure:
     The console displays whether the workflow has completed successfully or if there were any errors during execution.
 
 ## Error Handling
-    
+
     The system includes comprehensive error handling at each step:
 
 - **Email Agent:**
@@ -132,11 +132,12 @@ Create a config/config.json file with the following structure:
     ├── main_workflow.py
     ├── requirements.txt
     └── README.md
-    agents/: Contains all agent modules.
-    config/: Contains the configuration file for API keys and credentials.
-    main_workflow.py: Entry point that sets up and runs the LangGraph workflow.
-    requirements.txt: List of required Python packages.
-    README.md: Project documentation.
+
+*agents*/: Contains all agent modules.
+*config*/: Contains the configuration file for API keys and credentials.
+*main.py*: Entry point that sets up and runs the LangGraph workflow.
+*requirements.txt*: List of required Python packages.
+*README.md*: Project documentation.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
