@@ -68,25 +68,7 @@ This autonomous agent system receives a user query, delegates tasks to the appro
 4. **Configure API Keys and Credentials:**
 # Configure API Keys and Credentials
 
-Create a `config/config.json` file with the following structure:
-
-<!-- ```json
-{
-  "email": {
-    "sender_email": "your_sender@example.com",
-    "receiver_email": "your_receiver@example.com",
-    "smtp_server": "smtp.example.com",
-    "smtp_port": 587,
-    "username": "your_smtp_username",
-    "password": "your_smtp_password"
-  },
-  "hubspot": {
-    "access_token": "your_hubspot_access_token"
-  },
-  "groq": {
-    "api_key": "your_groq_api_key"
-  }
-} -->
+Create a `config/config.json` file with the `emaple_config/config.json` structure
 
 
 5. **Run the Application:**
@@ -141,9 +123,9 @@ The system includes comprehensive error handling at each step:
 
 `config/`: Contains the configuration file for API keys and credentials.
 
-*main.py*: Entry point that sets up and runs the LangGraph workflow.
-*requirements.txt*: List of required Python packages.
-*README.md*: Project documentation.
+`main.py`: Entry point that sets up and runs the LangGraph workflow.
+`requirements.txt`: List of required Python packages.
+`README.md`: Project documentation.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
