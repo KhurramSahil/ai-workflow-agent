@@ -115,7 +115,7 @@ The system includes comprehensive error handling at each step:
     │   └── orchestrator.py
     ├── config/
     │   └── config.json
-    ├── main_workflow.py
+    ├── main.py
     ├── requirements.txt
     └── README.md
 
