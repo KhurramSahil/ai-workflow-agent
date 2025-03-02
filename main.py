@@ -90,8 +90,7 @@ def handle_user_query(query):
 
 if __name__ == "__main__":
     # sample_query = "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"
-    sample_query = "Send urgent email about to sahil for meeting"
-    # sample_query = "Hi"
+    sample_query = "Send urgent email for meeting"
     result = handle_user_query(sample_query)
     print("\nWorkflow Result:")
     print(json.dumps(result, indent=2))
