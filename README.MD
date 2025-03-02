@@ -56,8 +56,36 @@ This autonomous agent system receives a user query, delegates tasks to the appro
    git clone https://github.com/your-username/ai-workflow-agent.git
    cd ai-workflow-agent
 
-## Create a Virtual Environment:
+2. **Create a Virtual Environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+3. **Install Dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+4. **Configure API Keys and Credentials:**
+Create a config/config.json file with the following structure:
+    ```json
+    {
+  "email": {
+    "sender_email": "your_sender@example.com",
+    "receiver_email": "your_receiver@example.com",
+    "smtp_server": "smtp.example.com",
+    "smtp_port": 587,
+    "username": "your_smtp_username",
+    "password": "your_smtp_password"
+  },
+  "hubspot": {
+    "access_token": "your_hubspot_access_token"
+  },
+  "groq": {
+    "api_key": "your_groq_api_key"
+  }
+}
+
+
+
+
 
