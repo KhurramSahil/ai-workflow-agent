@@ -70,7 +70,7 @@ This autonomous agent system receives a user query, delegates tasks to the appro
 
 Create a `config/config.json` file with the following structure:
 
-```json
+<!-- ```json
 {
   "email": {
     "sender_email": "your_sender@example.com",
@@ -86,7 +86,7 @@ Create a `config/config.json` file with the following structure:
   "groq": {
     "api_key": "your_groq_api_key"
   }
-}
+} -->
 
 
 5. **Run the Application:**
@@ -137,8 +137,8 @@ The system includes comprehensive error handling at each step:
     ├── requirements.txt
     └── README.md
 
-*agents*/: Contains all agent modules.
-*config*/: Contains the configuration file for API keys and credentials.
+`agents/`: Contains all agent modules.
+`config/`: Contains the configuration file for API keys and credentials.
 *main.py*: Entry point that sets up and runs the LangGraph workflow.
 *requirements.txt*: List of required Python packages.
 *README.md*: Project documentation.
