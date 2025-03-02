@@ -1,9 +1,9 @@
 # main workflow
 
 from langgraph.graph import StateGraph, END
-from myagents.orchestrator import Orchestrator
-from myagents.hubspot_agnet import HubSpotAgent
-from myagents.email_agent import EmailAgent
+from agents.orchestrator import Orchestrator
+from agents.hubspot_agnet import HubSpotAgent
+from agents.email_agent import EmailAgent
 import json
 
 
