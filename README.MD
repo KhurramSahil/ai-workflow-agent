@@ -92,14 +92,14 @@ Create a config/config.json file with the following structure:
     python main.py
 
 ## Usage
-User Query:
-The application accepts a user query (e.g., "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"). The query is processed by the orchestrator, which then directs the workflow accordingly.
+- **User Query:**
+    The application accepts a user query (e.g., "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"). The query is processed by the orchestrator, which then directs the workflow accordingly.
 
-Workflow Execution:
-The LangGraph workflow routes the query through the orchestrator, then to the HubSpot agent (if creating a contact), and finally to the Email agent for sending a notification.
+- **Workflow Execution:**
+    The LangGraph workflow routes the query through the orchestrator, then to the HubSpot agent (if creating a contact), and finally to the Email agent for sending a notification.
 
-Output:
-The console displays whether the workflow has completed successfully or if there were any errors during execution.
+-  **Output:**
+    The console displays whether the workflow has completed successfully or if there were any errors during execution.
 
 ## Error Handling
 The system includes comprehensive error handling at each step:
