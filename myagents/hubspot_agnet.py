@@ -50,30 +50,6 @@ class HubSpotAgent:
             "properties": response.properties
         }
 
-    def search_contacts(self, search_params):
-        """Search contacts using HubSpot's search API"""
-        search_request = PublicObjectSearchRequest(**search_params)
-        response = hubspot_client.crm.contacts.search_api.do_search(
-            public_object_search_request=search_request
-        )
-        return {
-            "success": True,
-            "results": [result.properties for result in response.results]
-        }
-
-    def upload_file(self, file_params):
-        """Upload files to HubSpot"""
-        response = hubspot_client.files.files_api.upload(
-            file=file_params["path"],
-            file_name=file_params["name"],
-            folder_path=file_params.get("folder", "/"),
-            options=json.dumps(file_params.get("options", {}))
-        )
-        return {
-            "success": True,
-            "file_id": response.id,
-            "url": response.url
-        }
 
     def _handle_api_exception(self, e):
         """Handle HubSpot API exceptions"""

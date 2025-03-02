@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, END
-from agentsvv.orchestrator import Orchestrator
-from agentsvv.hubspot_agnet import HubSpotAgent
-from agentsvv.email_agent import EmailAgent
+from myagents.orchestrator import Orchestrator
+from myagents.hubspot_agnet import HubSpotAgent
+from myagents.email_agent import EmailAgent
 import json
 
 
