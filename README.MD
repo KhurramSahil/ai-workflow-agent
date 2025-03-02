@@ -68,7 +68,7 @@ This autonomous agent system receives a user query, delegates tasks to the appro
 4. **Configure API Keys and Credentials:**
 Create a config/config.json file with the following structure:
     ```json
-    {
+    """{
   "email": {
     "sender_email": "your_sender@example.com",
     "receiver_email": "your_receiver@example.com",
@@ -83,7 +83,15 @@ Create a config/config.json file with the following structure:
   "groq": {
     "api_key": "your_groq_api_key"
   }
-}
+}"""
+
+5. **Run the Application:**
+
+    Execute the main workflow script:
+
+    ```bash
+    python main_workflow.py
+
 
 
 
