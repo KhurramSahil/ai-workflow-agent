@@ -1,0 +1,20 @@
+{
+    "openai": {
+        "api_key": "your-openai-key"
+    },
+    "hubspot": {
+        "access_token": "hubspot_access_token",
+        "base_url": "https://api.hubapi.com"
+    },
+    "email": {
+        "smtp_server": "",
+        "smtp_port": "your_smtp_port",
+        "username" : "your_smtp_server_username",
+        "password" : "your_smtp_server_password",
+        "sender_email" : "dumy_sender_email",
+        "receiver_email" : "dumy_receiver_email"
+    },
+    "groq" : {
+    "api_key": "your-groqapi_key"
+    }
+}
