@@ -1,3 +1,5 @@
+# main workflow
+
 from langgraph.graph import StateGraph, END
 from myagents.orchestrator import Orchestrator
 from myagents.hubspot_agnet import HubSpotAgent
@@ -41,11 +43,13 @@ workflow.add_node("orchestrator", orchestrator_node)
 workflow.add_node("hubspot_agent", hubspot_node)
 workflow.add_node("email_agent", email_node)
 
-# Define conditional edges
+# Define conditional routing
 def route_after_orchestrator(state):
-    if state.get("action_type") != "fallback":
+    """Determine next node based on action type"""
+    action_type = state.get("action_type")
+    if action_type == "contact_create":
         return "hubspot_agent"
-    return "email_agent"
+    return "email_agent"  # Handles send_email and fallback
 
 workflow.add_conditional_edges(
     "orchestrator",
@@ -56,6 +60,7 @@ workflow.add_conditional_edges(
     }
 )
 
+# Define normal edges
 workflow.add_edge("hubspot_agent", "email_agent")
 workflow.add_edge("email_agent", END)
 workflow.set_entry_point("orchestrator")
@@ -66,7 +71,17 @@ def handle_user_query(query):
     app = workflow.compile()
     result = app.invoke({"query": query})
     
-    if result.get("email_sent", False) and result.get("hubspot_result", {}).get("success", False):
+    # Determine success based on action type
+    action_type = result.get("action_type")
+    email_success = result.get("email_sent", False)
+    hubspot_success = result.get("hubspot_result", {}).get("success", False)
+    
+    if action_type == "contact_create":
+        success = email_success and hubspot_success
+    else:  # send_email or fallback
+        success = email_success
+    
+    if success:
         print("✅ Successfully completed all operations")
     else:
         print("❌ Workflow completed with errors")
@@ -74,7 +89,7 @@ def handle_user_query(query):
     return result
 
 if __name__ == "__main__":
-    sample_query = "add contact in hubspot with user333@gmail.com and name for this is Rehman, send notification email also"
+    # sample_query = "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"
     sample_query = "Send urgent email about to sahil for meeting"
     # sample_query = "Hi"
     result = handle_user_query(sample_query)
