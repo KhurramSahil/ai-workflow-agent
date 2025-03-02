@@ -68,7 +68,7 @@ This autonomous agent system receives a user query, delegates tasks to the appro
 4. **Configure API Keys and Credentials:**
 Create a config/config.json file with the following structure:
     ```json
-    """{
+    <!-- {
   "email": {
     "sender_email": "your_sender@example.com",
     "receiver_email": "your_receiver@example.com",
@@ -83,16 +83,58 @@ Create a config/config.json file with the following structure:
   "groq": {
     "api_key": "your_groq_api_key"
   }
-}"""
+} -->
 
 5. **Run the Application:**
 
     Execute the main workflow script:
-
     ```bash
-    python main_workflow.py
+    python main.py
 
+## Usage
+User Query:
+The application accepts a user query (e.g., "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"). The query is processed by the orchestrator, which then directs the workflow accordingly.
 
+Workflow Execution:
+The LangGraph workflow routes the query through the orchestrator, then to the HubSpot agent (if creating a contact), and finally to the Email agent for sending a notification.
+
+Output:
+The console displays whether the workflow has completed successfully or if there were any errors during execution.
+
+## Error Handling
+The system includes comprehensive error handling at each step:
+
+Email Agent:
+Uses try/except blocks to catch and log SMTP errors during email sending. If an error occurs, the agent returns a failure status.
+
+HubSpot Agent:
+Handles API exceptions by catching ApiException from the HubSpot SDK and parsing error details. It also validates required fields (e.g., email) and raises descriptive errors if data is missing.
+
+Orchestrator & Workflow:
+The orchestrator provides a fallback JSON response if the query processing fails. The workflow then checks the success status of each operation and logs a final result accordingly.
+
+## Project Structure
+arduino
+Copy
+Edit
+ai-workflow-agent/
+├── agents/
+│   ├── email_agent.py
+│   ├── hubspot_agent.py
+│   └── orchestrator.py
+├── config/
+│   └── config.json
+├── main_workflow.py
+├── requirements.txt
+└── README.md
+agents/: Contains all agent modules.
+config/: Contains the configuration file for API keys and credentials.
+main_workflow.py: Entry point that sets up and runs the LangGraph workflow.
+requirements.txt: List of required Python packages.
+README.md: Project documentation.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
 
