@@ -93,7 +93,7 @@ Create a config/config.json file with the following structure:
 
 ## Usage
 - **User Query:**
-    The application accepts a user query (e.g., "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"). The query is processed by the orchestrator, which then directs the workflow accordingly.
+The application accepts a user query (e.g., "add contact in hubspot with user33443@gmail.com and name for this is Ali Rehman, send notification email also"). The query is processed by the orchestrator, which then directs the workflow accordingly.
 
 - **Workflow Execution:**
     The LangGraph workflow routes the query through the orchestrator, then to the HubSpot agent (if creating a contact), and finally to the Email agent for sending a notification.
