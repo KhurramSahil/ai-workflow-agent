@@ -67,23 +67,22 @@ This autonomous agent system receives a user query, delegates tasks to the appro
     pip install -r requirements.txt
 4. **Configure API Keys and Credentials:**
 Create a config/config.json file with the following structure:
-    ```json
-    <!-- {
-  "email": {
-    "sender_email": "your_sender@example.com",
-    "receiver_email": "your_receiver@example.com",
-    "smtp_server": "smtp.example.com",
-    "smtp_port": 587,
-    "username": "your_smtp_username",
-    "password": "your_smtp_password"
-  },
-  "hubspot": {
-    "access_token": "your_hubspot_access_token"
-  },
-  "groq": {
-    "api_key": "your_groq_api_key"
-  }
-} -->
+        {
+    "email": {
+        "sender_email": "your_sender@example.com",
+        "receiver_email": "your_receiver@example.com",
+        "smtp_server": "smtp.example.com",
+        "smtp_port": 587,
+        "username": "your_smtp_username",
+        "password": "your_smtp_password"
+    },
+    "hubspot": {
+        "access_token": "your_hubspot_access_token"
+    },
+    "groq": {
+        "api_key": "your_groq_api_key"
+    }
+    }
 
 5. **Run the Application:**
 
@@ -106,7 +105,7 @@ Create a config/config.json file with the following structure:
 
 ## Error Handling
 
-    The system includes comprehensive error handling at each step:
+The system includes comprehensive error handling at each step:
 
 - **Email Agent:**
 
