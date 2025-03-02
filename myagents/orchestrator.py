@@ -12,50 +12,7 @@ config = load_config()
 # Initialize clients
 groq_client = Groq(api_key=config['groq']['api_key'])
 
-
 class Orchestrator:
-#     def process_query(self, query):
-#         """Analyze query and determine required actions"""
-#         # In Orchestrator class
-#         prompt = f"""Analyze the following user query and generate HubSpot parameters accordingly:
-#         {query}
-#         if user intent is about tpo create contact:
-#         Return the output in JSON format with the following keys:
-#         - 'action_type': (e.g., contact_create)
-#         - 'email_subject': (A subject line for an email)
-#         - 'email_body': (The content of the email in passonate way like welcome etc and this mail is auto genrated do not reply this email)
-#         - 'Best Regards': (XYZ Company)
-#         - 'hubspot_data': {{
-#             "properties": {{
-#                 "firstname": (First name extracted or generated),
-#                 "lastname": (Last name extracted or generated),
-#                 "email": (Email extracted or generated)
-#             }}
-#         }}"""
-
-
-        
-#         try:
-#             completion = groq_client.chat.completions.create(
-#                 model="llama-3.3-70b-versatile",
-#                 messages=[{"role": "user", "content": prompt}],
-#                 temperature=0.6,
-#                 max_tokens=1024,
-#                 top_p=0.95,
-#                 response_format={"type": "json_object"}
-#             )
-            
-#             response = json.loads(completion.choices[0].message.content)
-#             return response
-            
-#         except Exception as e:
-#             print(f"Orchestrator error: {e}")
-#             return {
-#                 "action_type": "fallback",
-#                 "email_subject": "Action Confirmation",
-#                 "email_body": f"We've received your request: {query}",
-#                 "hubspot_data": {}
-#             }
 
     def process_query(self, query):
         """
