@@ -106,6 +106,28 @@ The system includes comprehensive error handling at each step:
 
     The orchestrator provides a fallback JSON response if the query processing fails. The workflow then checks the success status of each operation and logs a final result accordingly.
 
+
+## Limitations and Future Work
+### Limitations
+- **HubSpot Operations:**
+  Currently, the system supports only a single operation in HubSpot (creating a contact). It does not yet support additional functions such as searching for contacts or retrieving all contacts.
+
+- **Conversational Interface:**
+  The system is not conversational at the moment. It processes each query as a standalone command rather than engaging in an interactive dialogue.
+
+- **Memory:**
+  There is no memory component integrated, meaning the system does not retain context or historical data between interactions.
+
+### Future Work
+- **Conversational Capabilities:**
+    Enhance the system to support a conversational interface for more natural and interactive user engagement.
+
+- **Memory Integration:**
+    Incorporate memory to maintain context over multiple interactions, improving the workflow’s responsiveness and accuracy.
+
+- **Extended HubSpot Functionality:**
+    Expand the HubSpot operations to include features such as searching for contacts, retrieving all contacts, updating contact details, and other CRM functions.
+
 ## Project Structure
 
     ai-workflow-agent/
